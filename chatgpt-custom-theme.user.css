@@ -1,100 +1,183 @@
 /* ==UserStyle==
-@name           ChatGPT Vesper Full Gradient Dark
+@name           ChatGPT Full Gradient Dark + Solid Modals & Dropdowns + Color Gradient Overlay v2.0.0
 @namespace      github.com/openstyles/stylus
-@version        4.0.0
+@version        2.0.0
 @license        MIT
-@author         modded by ChatGPT
+@author         gowtham
+@github         @gpl-gowthamchand
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://chatgpt.com/") {
 
-    /* Base color variables */
-    :root {
-        --gray-700: #1e1e1e !important;
-        --gray-750: #1e1e1e !important;
-        --gray-800: #101010 !important;
-        --gray-900: #161616 !important;
-        --sidebar-surface-secondary: rgba(26, 26, 26, 0.9) !important;
+  :root {
+    --gray-700: #1e1e1e !important;
+    --gray-750: #1e1e1e !important;
+    --gray-800: #101010 !important;
+    --gray-900: #161616 !important;
+    --sidebar-surface-secondary: rgba(26, 26, 26, 0.95) !important;
 
-        /* Gradient background variables */
-        --bg-primary: linear-gradient(145deg, #0d1224, #1a1f3b, #2a2f55, #433d72) !important;
-        --bg-secondary: transparent !important;
-        --bg-elevated-secondary: rgba(20, 20, 40, 0.85) !important;
+    /* Base gradient */
+    --bg-primary: linear-gradient(145deg, #0d1224, #1a1f3b, #2a2f55, #433d72) !important;
 
-        --border-color: rgba(255, 255, 255, 0.06) !important;
-    }
+    /* Updated vertical multi-color gradient overlay with yellow instead of green */
+    --bg-color-overlay: linear-gradient(
+      to bottom,
+      rgba(30, 20, 10, 0.8) 0%,        /* dark orange top */
+      rgba(50, 45, 10, 0.6) 25%,       /* dark yellow */
+      rgba(15, 20, 45, 0.5) 50%,       /* dark blue center */
+      rgba(35, 15, 45, 0.6) 75%,       /* dark purple */
+      rgba(10, 10, 10, 0.85) 100%      /* near black bottom */
+    ) !important;
 
-    /* Apply gradient to the entire viewport */
-    html, body {
-        background: var(--bg-primary) !important;
-        background-attachment: fixed !important;
-        background-size: cover !important;
-        color: #fff !important;
-    }
+    --bg-secondary: transparent !important;
+    --bg-elevated-secondary: rgba(20, 20, 40, 0.9) !important;
 
-    /* Make main containers transparent to show gradient */
-    .dark,
-    .dark .flex-1,
-    .dark main,
-    .dark .bg-token-main-surface-primary,
-    .dark .bg-token-main-surface-secondary,
-    .dark .bg-token-sidebar-surface-primary {
-        background: transparent !important;
-    }
+    --border-color: rgba(255, 255, 255, 0.07) !important;
+    --text-primary: #e0e0e0 !important;
+    --text-secondary: #b0b0b0 !important;
+    --accent-color: #99ffe4 !important;
+    --highlight-color: #ffc799 !important;
+  }
 
-    /* Sidebar styling */
-    .dark .bg-token-sidebar-surface-primary,
-    .dark .bg-token-sidebar-surface-secondary {
-        background: rgba(20, 20, 30, 0.9) !important;
-        border-right: 1px solid var(--border-color) !important;
-    }
+  html, body {
+    background:
+      var(--bg-color-overlay),
+      var(--bg-primary)
+      !important;
 
-    /* Chat message bubbles */
-    .markdown pre {
-        background-color: rgba(22, 22, 22, 0.9) !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        border-radius: 10px !important;
-    }
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-    /* Code highlighting */
-    .hljs,
-    code {
-        background: rgba(20, 20, 20, 0.9) !important;
-        color: #ffffff !important;
-    }
-    .hljs-string {
-        color: #99ffe4 !important;
-    }
-    .hljs-title.function_,
-    .hljs-name,
-    .hljs-number,
-    .hljs-literal,
-    .hljs-selector-class,
-    .hljs-type,
-    .hljs-selector-id,
-    .hljs-variable,
-    .hljs-symbol {
-        color: #ffc799 !important;
-    }
+  /* Keep rest same as before */
+  
+  .dark,
+  .dark .flex-1,
+  .dark main,
+  .dark .bg-token-main-surface-primary,
+  .dark .bg-token-main-surface-secondary,
+  .dark .bg-token-sidebar-surface-primary {
+    background: transparent !important;
+  }
 
-    /* Input bar */
-    textarea,
-    input {
-        background: rgba(22, 22, 22, 0.8) !important;
-        color: #fff !important;
-        border: 1px solid var(--border-color) !important;
-    }
+  .dark .bg-token-sidebar-surface-primary,
+  .dark .bg-token-sidebar-surface-secondary {
+    background: rgba(20, 20, 30, 0.95) !important;
+    border-right: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+  }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
+  .dark .bg-token-sidebar-surface-primary:hover,
+  .dark .bg-token-sidebar-surface-secondary:hover {
+    background: rgba(30, 30, 45, 0.95) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .markdown pre {
+    background-color: rgba(22, 22, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    font-size: 0.95em !important;
+    font-family: 'Fira Code', monospace, monospace !important;
+    overflow-x: auto !important;
+  }
+
+  .hljs,
+  code {
+    background: rgba(20, 20, 20, 0.95) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Fira Code', monospace, monospace !important;
+    font-size: 0.95em !important;
+  }
+  .hljs-string {
+    color: var(--accent-color) !important;
+  }
+  .hljs-title.function_,
+  .hljs-name,
+  .hljs-number,
+  .hljs-literal,
+  .hljs-selector-class,
+  .hljs-type,
+  .hljs-selector-id,
+  .hljs-variable,
+  .hljs-symbol {
+    color: var(--highlight-color) !important;
+  }
+
+  textarea,
+  input {
+    background: rgba(22, 22, 22, 0.85) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    padding: 10px !important;
+    font-size: 1em !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    transition: border-color 0.3s ease;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 8px var(--accent-color) !important;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(153, 255, 228, 0.3) !important;
+    border-radius: 6px !important;
+    border: 2px solid transparent !important;
+    background-clip: content-box !important;
+    transition: background-color 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(153, 255, 228, 0.5) !important;
+  }
+
+  /* Dropdown menus fully opaque */
+  .dark [role="menu"],
+  .dark .overflow-hidden.absolute.z-50.bg-token-main-surface-primary,
+  .dark .overflow-hidden.absolute.z-50.bg-token-main-surface-secondary,
+  .dark .absolute.bg-token-main-surface-primary {
+    background: rgba(20, 20, 30, 0.98) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Strongly opaque account modal overlay */
+  .dark .fixed.inset-0.flex.items-center.justify-center.bg-black.bg-opacity-50,
+  .dark .fixed.inset-0.flex.items-center.justify-center.bg-black.bg-opacity-60 {
+    background-color: rgba(10, 10, 10, 0.99) !important; /* almost solid black */
+    backdrop-filter: none !important;
+  }
+
+  /* Strongly opaque popup window inside modal */
+  .dark .fixed.inset-0.flex.items-center.justify-center > div {
+    background: rgba(18, 18, 18, 0.99) !important; /* near black, very solid */
+    border-radius: 14px !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.95) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    padding: 24px !important;
+    max-width: 650px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
 }
