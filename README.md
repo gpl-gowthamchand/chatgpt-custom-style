@@ -53,10 +53,14 @@ Feel free to open issues, suggest improvements, or contribute enhancements via p
 ---
 
 ## Screenshots
+ <table>
+  <tr>
+    <td><img src="https://github.com/gpl-gowthamchand/chatgpt-custom-style/blob/main/screenshot%201.jpeg" width="300" /></td>
+    <td><img src="https://github.com/gpl-gowthamchand/chatgpt-custom-style/blob/main/screenshot%202.jpeg" width="300" /></td>
+  </tr>
+</table>
 
-*Add screenshots here to showcase the theme in action!*
-https://github.com/gpl-gowthamchand/chatgpt-custom-style/blob/main/screenshot%201.jpeg, 
-https://github.com/gpl-gowthamchand/chatgpt-custom-style/blob/main/screenshot%202.jpeg
+
 
 ---
 
