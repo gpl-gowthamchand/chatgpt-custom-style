@@ -1,0 +1,100 @@
+/* ==UserStyle==
+@name           ChatGPT Vesper Full Gradient Dark
+@namespace      github.com/openstyles/stylus
+@version        4.0.0
+@license        MIT
+@author         modded by ChatGPT
+==/UserStyle== */
+
+@-moz-document url-prefix("https://chatgpt.com/") {
+
+    /* Base color variables */
+    :root {
+        --gray-700: #1e1e1e !important;
+        --gray-750: #1e1e1e !important;
+        --gray-800: #101010 !important;
+        --gray-900: #161616 !important;
+        --sidebar-surface-secondary: rgba(26, 26, 26, 0.9) !important;
+
+        /* Gradient background variables */
+        --bg-primary: linear-gradient(145deg, #0d1224, #1a1f3b, #2a2f55, #433d72) !important;
+        --bg-secondary: transparent !important;
+        --bg-elevated-secondary: rgba(20, 20, 40, 0.85) !important;
+
+        --border-color: rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Apply gradient to the entire viewport */
+    html, body {
+        background: var(--bg-primary) !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        color: #fff !important;
+    }
+
+    /* Make main containers transparent to show gradient */
+    .dark,
+    .dark .flex-1,
+    .dark main,
+    .dark .bg-token-main-surface-primary,
+    .dark .bg-token-main-surface-secondary,
+    .dark .bg-token-sidebar-surface-primary {
+        background: transparent !important;
+    }
+
+    /* Sidebar styling */
+    .dark .bg-token-sidebar-surface-primary,
+    .dark .bg-token-sidebar-surface-secondary {
+        background: rgba(20, 20, 30, 0.9) !important;
+        border-right: 1px solid var(--border-color) !important;
+    }
+
+    /* Chat message bubbles */
+    .markdown pre {
+        background-color: rgba(22, 22, 22, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 10px !important;
+    }
+
+    /* Code highlighting */
+    .hljs,
+    code {
+        background: rgba(20, 20, 20, 0.9) !important;
+        color: #ffffff !important;
+    }
+    .hljs-string {
+        color: #99ffe4 !important;
+    }
+    .hljs-title.function_,
+    .hljs-name,
+    .hljs-number,
+    .hljs-literal,
+    .hljs-selector-class,
+    .hljs-type,
+    .hljs-selector-id,
+    .hljs-variable,
+    .hljs-symbol {
+        color: #ffc799 !important;
+    }
+
+    /* Input bar */
+    textarea,
+    input {
+        background: rgba(22, 22, 22, 0.8) !important;
+        color: #fff !important;
+        border: 1px solid var(--border-color) !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
